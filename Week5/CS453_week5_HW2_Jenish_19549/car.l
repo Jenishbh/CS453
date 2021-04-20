@@ -18,11 +18,11 @@ Drive   DOOR+WINDOW+BRAKE+Throttle+Transmission
 
 %%
 
-{DOOR} {printf("Door is %s\n", yytext); door_count++; }
-{WINDOW} {printf("Window is %s\n", yytext); window_count++; }
-{BRAKE} {printf("Brake is %s\n", yytext); brake_count++; }
-{Throttle} {printf("Throttle is %s\n", yytext); throttle_count++; }
-{Transmission} {printf("Transmission is %s\n", yytext); trans_count++; }
+{DOOR} {printf("Door is %s\n", yytext); door_count++; return DOOR }
+{WINDOW} {printf("Window is %s\n", yytext); window_count++; return WINDOW }
+{BRAKE} {printf("Brake is %s\n", yytext); brake_count++; return Brake }
+{Throttle} {printf("Throttle is %s\n", yytext); throttle_count++; return Throttle }
+{Transmission} {printf("Transmission is %s\n", yytext); trans_count++; return Transmission }
 
 {Drive}     {pritnf("Car is Running")}
 
